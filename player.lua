@@ -66,6 +66,6 @@ function player:draw()
     love.graphics.rectangle("fill", player.x, player.y,30,30)
     love.graphics.print(aceleration.x .."\n" ..aceleration.y, mouse.x-20, mouse.y-15)      
 end
---player draw end
+
 
 return player
