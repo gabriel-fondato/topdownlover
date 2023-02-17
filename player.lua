@@ -11,7 +11,7 @@ function player:update(dt)
     mouse.x = love.mouse.getX()
     mouse.y = love.mouse.getY()
 
-    --keyboard input
+--keyboard input
     
 
     if love.keyboard.isDown("w") then
@@ -26,7 +26,7 @@ function player:update(dt)
         aceleration.x = aceleration.x + player.speed
 
     end
---keyboard input end
+--aceleration cauculation
 
     if(aceleration.x > 0) then
         aceleration.x = aceleration.x - 0.5
