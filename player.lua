@@ -12,13 +12,7 @@ function player:update(dt)
 --mouse imput
     mouse.x = love.mouse.getX()
     mouse.y = love.mouse.getY()
-    
-
-
-
 --keyboard input
-    
-
     if love.keyboard.isDown("w") then
         aceleration.y = aceleration.y - player.speed
     elseif love.keyboard.isDown("s") then
@@ -68,8 +62,6 @@ function player:update(dt)
     player.rotation = angle
     
 end
---player update func end
-
 --player draw
 function player:draw()
 --render player in a nerdy way
