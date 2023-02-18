@@ -2,14 +2,19 @@ player = {}
 player.x = 100
 player.y = 100
 player.speed = 1.5
+player.width = 25
+player.height =25
 aceleration = {}
 mouse = {}
 aceleration.x, aceleration.y = 0, 0
 
 function player:update(dt)
-    --mouse imput
+--mouse imput
     mouse.x = love.mouse.getX()
     mouse.y = love.mouse.getY()
+    
+
+
 
 --keyboard input
     
@@ -27,6 +32,7 @@ function player:update(dt)
 
     end
 --aceleration cauculation
+
 
     if(aceleration.x > 0) then
         aceleration.x = aceleration.x - 0.5
@@ -57,14 +63,24 @@ function player:update(dt)
     player.x = player.x + aceleration.x
     player.y = player.y + aceleration.y
 
+--look/aim at the cursor
+    angle = math.atan2(mouse.y - player.y, mouse.x - player.x) 
+    player.rotation = angle
     
 end
 --player update func end
 
 --player draw
 function player:draw()
-    love.graphics.rectangle("fill", player.x, player.y,30,30)
-    love.graphics.print(aceleration.x .."\n" ..aceleration.y, mouse.x-20, mouse.y-15)      
+--render player in a nerdy way
+    love.graphics.push()
+    love.graphics.translate(self.x, self.y)
+    love.graphics.rotate(self.rotation)
+    love.graphics.rectangle("fill", -self.width/2, -self.height/2, self.width, self.height)
+    love.graphics.pop()
+
+
+    love.graphics.print(aceleration.x .."\n" ..aceleration.y .."\n" ..player.rotation, mouse.x-20, mouse.y-15)      
 end
 
 
