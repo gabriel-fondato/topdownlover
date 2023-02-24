@@ -6,7 +6,7 @@ function bullet:update(dt)
 end
 
 function bullet:draw()
-
+--draw the "aim" in the front of the player
     love.graphics.push()
     love.graphics.translate(player.x, player.y)
     love.graphics.rotate(player.rotation)
