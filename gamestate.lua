@@ -4,16 +4,6 @@ game = {}
 
 
 
-
-
-
-
-
-
-
-
-
-
 function game:draw()
     player:draw()
 end
