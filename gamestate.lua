@@ -2,7 +2,7 @@ player = require("objects/player")
 
 game = {}
 
-
+player:load({50,50})
 
 function game:draw()
     player:draw()

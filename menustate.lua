@@ -1,9 +1,10 @@
 menu = {}
 redrpc = require("rpcsetup")
+main = require("main.lua")
 
 
 function menu:load()
-    presence.state = "CurrentState"
+    presence.state = CurrentState
 
 end
 

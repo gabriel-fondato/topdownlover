@@ -8,6 +8,13 @@ aceleration = {}
 mouse = {}
 aceleration.x, aceleration.y = 0, 0
 
+function player:load(spawnXY, ammo)
+    player.x = spawnXY[1]
+    player.y = spawnXY[2]
+
+
+end
+
 function player:update(dt)
 --mouse imput
     mouse.x = love.mouse.getX()

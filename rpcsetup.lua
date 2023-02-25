@@ -31,19 +31,14 @@ function redrpc:loadstuff()
     end
 end
 
-function redrpc:load()
+function redrpc:load(state,details,largeImageKey)
     discordRPC.initialize(appId, true)
     local now = os.time(os.date("*t"))
     presence = {
-        state = "Looking to Play",
-        details = "1v1 (Ranked)",
+        state = state,
+        details = details,
         startTimestamp = now,
-        endTimestamp = now + 60,
-        partyId = "party id",
-        partyMax = 2,
-        matchSecret = "match secret",
-        joinSecret = "join secret",
-        spectateSecret = "spectate secret",
+        largeImageKey = largeImageKey
     }
 
     nextPresenceUpdate = 0

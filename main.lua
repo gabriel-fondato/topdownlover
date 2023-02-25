@@ -2,12 +2,12 @@ menu = require("menustate") --tittle screen
 game = require("gamestate") --main game loop
 redrpc = require("rpcsetup") --discord rpc stuff
 
-CurrentState = "game" 
+CurrentState = "menu" 
 print("state"..CurrentState) --print state
 
 redrpc:loadstuff()
 function love.load()
-  redrpc:load()
+  redrpc:load(CurrentState, "doin nerdy stuff", "icon")
   function changeState(state)
     CurrentState = state --set state
     clearLoveCallbacks() --when change state "kill other state"
