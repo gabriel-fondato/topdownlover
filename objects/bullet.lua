@@ -1,4 +1,4 @@
-player = require("player")
+player = require("objects/player")
 bullet = {}
 
 function bullet:update(dt)

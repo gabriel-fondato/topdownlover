@@ -1,4 +1,4 @@
-player = require("player")
+player = require("objects/player")
 
 game = {}
 
@@ -6,6 +6,10 @@ game = {}
 
 function game:draw()
     player:draw()
+end
+
+function game:update()
+    player:update()
 end
 
 

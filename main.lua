@@ -1,11 +1,13 @@
 menu = require("menustate") --tittle screen
 game = require("gamestate") --main game loop
+redrpc = require("rpcsetup") --discord rpc stuff
 
-CurrentState = "menu" 
+CurrentState = "game" 
 print("state"..CurrentState) --print state
 
-
+redrpc:loadstuff()
 function love.load()
+  redrpc:load()
   function changeState(state)
     CurrentState = state --set state
     clearLoveCallbacks() --when change state "kill other state"
@@ -15,9 +17,10 @@ function love.load()
 end
 
 function love.update(dt)
+  redrpc:update()
   if CurrentState == "menu" then
     menu:update(dt)
-  elseif state == "game" then
+  elseif CurrentState == "game" then
     game:update(dt)
   end
 end
@@ -25,7 +28,11 @@ end
 function love.draw()
   if CurrentState == "menu" then
     menu:draw()
-  elseif state == "game" then
+  elseif CurrentState == "game" then
     game:draw()
   end
+end
+
+function love.quit()
+  redrpc:quit()
 end
