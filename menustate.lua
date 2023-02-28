@@ -1,15 +1,18 @@
 menu = {}
 redrpc = require("rpcsetup")
-main = require("main.lua")
+states = require("states")
+
 
 
 function menu:load()
-    presence.state = CurrentState
+    presence.state = states:GetStates()
+    
 
 end
 
 function menu:draw()
     love.graphics.print("main menu state :D", 50, 50, 0, 5, 5)
+
 
 end
 
