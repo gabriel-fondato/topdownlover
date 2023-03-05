@@ -20,6 +20,11 @@ function love.update(dt)
   elseif states:GetStates() == "game" then
     game:update(dt)
   end
+
+  if (states:GetStates() == "game" and tempVar == true) then
+    game:load()
+    tempVar = false
+  end
 end
 
 function love.draw()
