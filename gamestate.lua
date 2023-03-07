@@ -1,6 +1,7 @@
 player = require("objects/player")
 redrpc = require("rpcsetup")
 states = require("states")
+shottingSystem = require("shottingsystem")
 
 game = {}
 
@@ -13,10 +14,12 @@ end
 
 function game:draw()
     player:draw()
+    shottingSystem.drawShots()
 end
 
 function game:update()
     player:update()
+    shottingSystem.updateShots(dt)
 end
 
 

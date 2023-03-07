@@ -1,3 +1,5 @@
+shottingSystem = require("shottingsystem")
+
 player = {}
 player.x = 100
 player.y = 100
@@ -7,6 +9,7 @@ player.height =25
 aceleration = {}
 mouse = {}
 aceleration.x, aceleration.y = 0, 0
+
 
 function player:load(spawnXY, ammo)
     player.x = spawnXY[1]
@@ -82,5 +85,10 @@ function player:draw()
     love.graphics.print(aceleration.x .."\n" ..aceleration.y .."\n" ..player.rotation, mouse.x-20, mouse.y-15)      
 end
 
+function love.keypressed(key)
+    if key == "space" then
+      shottingSystem.spawnShot(player.x, player.y, player.angle, 500)
+    end
 
+end
 return player
