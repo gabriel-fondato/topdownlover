@@ -1,6 +1,6 @@
 states = {}
 CurrentState = "menu" 
-rpc = require("rpcsetup")
+
 function states:GetStates() 
     return CurrentState
 end
